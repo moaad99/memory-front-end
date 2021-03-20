@@ -1,0 +1,48 @@
+
+
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+.header{
+
+ color: rgb(255, 255, 255);
+  background-color: black;
+margin:auto;
+opacity: 0.6;
+  border-radius: 22px;
+width: 50%;
+position: relative;
+text-align: center;
+display: flex;
+
+}
+.e{
+  margin-inline: -310px;
+}
+.header h1 {
+  margin-inline:330px ;
+}
+
+
+img{  
+
+  height: 50px;
+  width: 50px;
+}
+.all{
+margin-top: 50px;
+height: 700px;
+  display: flex;
+  justify-content:space-between ;
+}
+
+.form{
+height: 400px;
+  box-shadow: 0px 0px 4px 3px black;
+  width:25%
+}
+
+.post{
+  
+  box-shadow: 0px 0px 4px 3px black;
+    width: 65%;
+}
