@@ -1,27 +1,46 @@
-import React, {useEffect} from 'react'
+import React, {useEffect,useState} from 'react'
+
+import {useSelector} from 'react-redux'
 
 import {useDispatch} from 'react-redux'
 
+import {getPost} from '../Actions/postAction'
+import Card from './Card'
+import Form from './Form'
 
-export default function home() {
 
+export default function Home() {
 
+   const dispatch = useDispatch()
 
-    useEffect(() => {
-        
-    }, [])
+   let b=0;
 
-    const dispatch = useDispatch()
+    const p = useSelector(state => state.posts)
+
+    
+
+  
+        useEffect(() => {
+           dispatch(getPost())
+           
+        }, [dispatch])
+    
     return (
-        <div>
-            
 
+
+        <div className="bd">
+            
+,
             <div className="header">
         <div>
-                <h1 >Memory</h1> 
+                <h1 style={{color:"black"}} >
+                
+                Memory
+     
+                </h1> 
                 </div>
                 <div className="e">
-                    <img src="https://icon-library.com/images/memories-icon/memories-icon-23.jpg" alt=""/>
+                    <img className="hj" src="https://icon-library.com/images/memories-icon/memories-icon-23.jpg" alt=""/>
                 </div>
             </div>
 
@@ -32,14 +51,28 @@ export default function home() {
             <div  className="form">
 
 
-<h1>FORM</h1>
+            <Form  />
 
                 </div>
 
                 <div  className="post">
-<h1>POST</h1>
-<h1>POST</h1>
-<h1>POST</h1>
+
+                <div className="row row-cols-1 row-cols-md-3 g-4">
+
+     
+                { p.post && p.post.map((postss,index)=>(
+  <div key={index} class="col">
+      
+     
+      <Card post={postss}/>
+        
+      
+      </div>
+
+
+                ))}
+                 
+                  </div>
                 </div>
 
                
@@ -52,3 +85,4 @@ export default function home() {
         </div>
     )
 }
+

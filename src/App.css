@@ -5,9 +5,9 @@
 .header{
 
  color: rgb(255, 255, 255);
-  background-color: black;
+  background-color: white;
 margin:auto;
-opacity: 0.6;
+margin-top: 30px;
   border-radius: 22px;
 width: 50%;
 position: relative;
@@ -15,34 +15,95 @@ text-align: center;
 display: flex;
 
 }
+.bd{
+
+  background-image: url("https://i.pinimg.com/originals/0c/c6/fd/0cc6fd8ab4a3da0256fa115de7823d38.jpg")  ;
+height: 789px;
+
+overflow: auto;
+
+}
 .e{
-  margin-inline: -310px;
+  margin-inline: -280px;
 }
 .header h1 {
-  margin-inline:330px ;
+  margin-inline:300px ;
 }
 
 
-img{  
+.hj{  
 
   height: 50px;
   width: 50px;
 }
 .all{
 margin-top: 50px;
-height: 700px;
+height: 500px;
   display: flex;
   justify-content:space-between ;
 }
+.bt{
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .form{
-height: 400px;
+height: 490px;
   box-shadow: 0px 0px 4px 3px black;
-  width:25%
+  width:25%;
+  color: black;
+  background-color: white;
+  
 }
 
 .post{
   
-  box-shadow: 0px 0px 4px 3px black;
+  
     width: 65%;
+}
+.card{
+  box-shadow: 0px 0px 4px 1px black;
+
+}
+
+@media screen and (max-width: 740px) {
+  .all {
+   flex-direction: column;
+  }
+  .form{
+    width:65%
+  }
+  .card{
+    margin-top: 30px;
+  }
+  .header{
+    width: 90%;
+  }
+  .header h1 {
+    margin-inline:160px ;
+    margin-top: 8px;
+  }
+  .e{
+    margin-inline: -140px;
+   
+  }
+  
+  
+}
+@media screen and  (max-width: 1100px) {
+
+  .header h1 {
+    margin-inline:146px ;
+    margin-top: 3px;
+  }
+  .e{
+    margin-inline: -130px;
+   
+  }
+  .bd{
+
+    background-image: url("https://i.pinimg.com/originals/0c/c6/fd/0cc6fd8ab4a3da0256fa115de7823d38.jpg")  ;
+  height: 2800px;
+  
+  }
 }
