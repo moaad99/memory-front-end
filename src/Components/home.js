@@ -32,14 +32,15 @@ export default function Home() {
             
 ,
             <div className="header">
-        <div>
-                <h1 style={{color:"black"}} >
+                
+        <div style={{marginTop:"10px"}} >
+                <h1  style={{color:"white"}} >
                 
                 Memory
      
                 </h1> 
                 </div>
-                <div className="e">
+                <div style={{marginTop:"10px"}} className="e">
                     <img className="hj" src="https://icon-library.com/images/memories-icon/memories-icon-23.jpg" alt=""/>
                 </div>
             </div>

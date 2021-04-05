@@ -7,11 +7,12 @@ import {createpost} from '../Actions/postAction'
 export default function Form() {
 
     const dispatch = useDispatch()
+    const [file,setFile] =useState("")
     const [curs, setCurs]= useState({
-
         creator:'',
         title:'',
-        message:''
+        message:'',
+        selectedFile:''
     })
         const handl=(e)=>{
            
@@ -19,15 +20,27 @@ export default function Form() {
             setCurs({...curs,[e.target.id]:e.target.value})
 
         }
-        const sub  =(e) =>{
+        const handlp=(e)=>{
+           
+
+            setFile(e.target.files[0])
+            setCurs({...curs,
+                selectedFile: [...curs.selectedFile, file]})
+
+        }
+        const sub=(e) =>{
             e.preventDefault()
+          
+            const formData= new FormData();
+
+            
+            formData.append('curs',curs)
+        
+            
           dispatch(createpost(curs))
 
         }
 
- /*       useEffect(() => {
-            
-        }, [input])*/
 const submit =(e) =>{
 
     e.preventDefault()
@@ -47,12 +60,12 @@ const submit =(e) =>{
 
 }
 
-
+//selectedFile
 
 
     return (
         <div className="container">
-      <form onSubmit={sub} style={{marginTop:"30px"}} className="ff">
+      <form onSubmit={sub} encType="multipart/form-data" style={{marginTop:"30px"}} className="ff">
 
          
           
@@ -67,7 +80,10 @@ const submit =(e) =>{
         <br/>
         <label style={{marginInline:"10px",marginBottom:"8px"}} htmlFor="">Image</label>
 
-        <input type="file"/>
+        <input  type="file"
+            filename="selectedFile"
+            onChange={handlp}
+        />
 <br/><br/>
         <button type="submit" className="btn btn-block btn-black">Create Post</button>
 

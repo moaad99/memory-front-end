@@ -10,7 +10,7 @@ export default function Card({post}) {
         <div>
              <div className="card">
       <img
-        src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+        src="https://cdn.accentuate.io/5278362468505/14178250850457/MarrakechLifestyle1-v1593504652539.jpg?1900x1200"
         className="card-img-top"
         alt="..."
       />
