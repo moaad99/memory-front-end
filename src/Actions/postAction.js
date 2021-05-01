@@ -1,5 +1,5 @@
 
-import {createPost} from '../api'
+import {createPost, updatepost} from '../api'
 import {fetchpost,deletepost} from '../api'
 
 
@@ -44,4 +44,23 @@ export const deletePost=(id) => async(dispatch)=>{
         console.log(error)
         
     }
+}
+
+export const updatePost =(id,post) => async(dispatch)=>{
+
+
+    try {
+        
+        const {data} = await updatepost(id,post)
+
+        dispatch({
+            type: 'UPDATE',
+            payload:data
+        })
+
+    } catch (error) {
+        console.log(error)
+
+    }
+
 }

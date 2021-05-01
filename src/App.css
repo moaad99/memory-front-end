@@ -2,6 +2,10 @@
 
 @import '~mdb-ui-kit/css/mdb.min.css';
 
+.card{
+  width: 330px;
+}
+
 .header{
 
  color: rgb(255, 255, 255);
@@ -109,18 +113,28 @@ height: 490px;
 }
 .card{
   box-shadow: 0px 0px 4px 1px black;
+  
 
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 540px) {
   .all {
    flex-direction: column;
   }
+  
   .form{
-    width:65%
+    width:97%;
+    max-height: 540px;
+    
   }
   .card{
     margin-top: 30px;
+    margin-inline: 20px;
+  }
+  .mem{
+    margin-inline: -70px;
+    padding: 2px;
+
   }
   .header{
     width: 90%;
@@ -129,9 +143,8 @@ height: 490px;
     margin-inline:160px ;
     margin-top: 8px;
   }
-  .e{
-    margin-inline: -140px;
-   
+  .hj{
+    margin-inline: 70px;
   }
   
   
@@ -148,7 +161,6 @@ height: 490px;
   }
   .bd{
 
-    background-image: url("https://i.pinimg.com/originals/0c/c6/fd/0cc6fd8ab4a3da0256fa115de7823d38.jpg")  ;
   height: 2800px;
   
   }

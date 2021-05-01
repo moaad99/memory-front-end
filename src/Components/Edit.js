@@ -2,9 +2,9 @@ import React , {useState} from 'react'
 
 import {useDispatch} from 'react-redux'
 
-import {createpost} from '../Actions/postAction'
+import {updatePost} from '../Actions/postAction'
 
-export default function Form() {
+export default function Edit({postid,postt}) {
 
     const dispatch = useDispatch()
     const [file,setFile] =useState("")
@@ -38,7 +38,7 @@ export default function Form() {
     setFile("");  
     setCreator(""); 
             
-          dispatch(createpost(formData))
+          dispatch(updatePost(postid,formData))
 
         }
 
@@ -52,22 +52,23 @@ export default function Form() {
          
           
         <label style={{marginInline:"10px",marginBottom:"8px"}}  htmlFor="">Name of Creator</label>
-        <input value={creator} onChange={(e)=> setCreator(e.target.value) }   id='creator' type="text" className="form-control" />
+        <input placeholder={`${postt.creator} `} onChange={(e)=> setCreator(e.target.value) }   id='creator' type="text" className="form-control" />
         
         <label style={{marginInline:"10px",marginBottom:"8px"}}  htmlFor="">Title</label>
-        <input value={title} onChange={(e)=> setTitle(e.target.value) }   id='title' type="text" className="form-control" />
+        <input  placeholder={`${postt.title} `}  onChange={(e)=> setTitle(e.target.value) }   id='title' type="text" className="form-control"  />
 
         <label style={{marginInline:"40px",marginBottom:"8px"}} htmlFor="">Description</label>
-       <textarea value={message} onChange={(e)=> setMessage(e.target.value) }   id='message' style={{marginInline:"17px"}}  name=""  cols="30" rows="5"></textarea>
+       <textarea placeholder={`${postt.message} `}  onChange={(e)=> setMessage(e.target.value) }   id='message' style={{marginInline:"17px"}}  name=""  cols="50" rows="5"></textarea>
         <br/>
         <label style={{marginInline:"10px",marginBottom:"8px"}} htmlFor="">Image</label>
+        <br/>
 
         <input  type="file"
             filename="selectedFile"
             onChange={handl}
         />
 <br/><br/>
-        <button type="submit" className="btn btn-block btn-black">Create Post</button>
+        <button type="submit" className="btn btn-block btn-dark">Update Post</button>
 
       </form>
         </div>

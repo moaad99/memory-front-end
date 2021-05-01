@@ -33,8 +33,8 @@ export default function Home() {
 ,
             <div className="header">
                 
-        <div style={{marginTop:"10px"}} >
-                <h1  style={{color:"white"}} >
+        <div className='mem' style={{marginTop:"10px"}} >
+                <h1   style={{color:"white"}} >
                 
                 Memory
      
@@ -58,7 +58,7 @@ export default function Home() {
 
                 <div  className="post">
 
-                <div className="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-2 g-4">
 
      
                 { p.post && p.post.map((postss,index)=>(
