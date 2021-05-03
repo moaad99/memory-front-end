@@ -1,6 +1,9 @@
 import React , {useState} from 'react'
 
 import {useDispatch} from 'react-redux'
+import toastr from 'toastr';
+import "toastr/build/toastr.css";
+
 
 import {updatePost} from '../Actions/postAction'
 
@@ -40,6 +43,10 @@ export default function Edit({postid,postt}) {
             
           dispatch(updatePost(postid,formData))
 
+          toastr.info('Post Updated succecfully')
+
+
+
         }
 
 
@@ -51,16 +58,16 @@ export default function Edit({postid,postt}) {
 
          
           
-        <label style={{marginInline:"10px",marginBottom:"8px"}}  htmlFor="">Name of Creator</label>
-        <input placeholder={`${postt.creator} `} onChange={(e)=> setCreator(e.target.value) }   id='creator' type="text" className="form-control" />
+        <label style={{marginInline:"10px",marginBottom:"8px"}}  htmlFor=""><strong>Name of Creator</strong></label>
+        <input defaultValue={postt.creator}  onChange={(e)=> setCreator(e.target.value) }   id='creator' type="text" className="form-control" />
         
-        <label style={{marginInline:"10px",marginBottom:"8px"}}  htmlFor="">Title</label>
-        <input  placeholder={`${postt.title} `}  onChange={(e)=> setTitle(e.target.value) }   id='title' type="text" className="form-control"  />
+        <label style={{marginInline:"10px",marginBottom:"8px"}}  htmlFor=""><strong>Title</strong></label>
+        <input  defaultValue={postt.title}  onChange={(e)=> setTitle(e.target.value) }   id='title' type="text" className="form-control"  />
 
-        <label style={{marginInline:"40px",marginBottom:"8px"}} htmlFor="">Description</label>
-       <textarea placeholder={`${postt.message} `}  onChange={(e)=> setMessage(e.target.value) }   id='message' style={{marginInline:"17px"}}  name=""  cols="50" rows="5"></textarea>
+        <label style={{marginInline:"10px",marginBottom:"8px"}} htmlFor=""><strong>Description</strong></label>
+       <textarea defaultValue={postt.message}  onChange={(e)=> setMessage(e.target.value) }   id='message' style={{marginInline:"17px"}}  name=""  cols="48" rows="5"></textarea>
         <br/>
-        <label style={{marginInline:"10px",marginBottom:"8px"}} htmlFor="">Image</label>
+        <label style={{marginInline:"10px",marginBottom:"8px"}} htmlFor=""><strong>Image</strong></label>
         <br/>
 
         <input  type="file"

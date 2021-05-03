@@ -34,7 +34,7 @@ export default function Home() {
             <div className="header">
                 
         <div className='mem' style={{marginTop:"10px"}} >
-                <h1   style={{color:"white"}} >
+                <h1   style={{color:"white",fontFamily:"serif"}} >
                 
                 Memory
      

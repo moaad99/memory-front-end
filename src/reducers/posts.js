@@ -26,7 +26,6 @@ const reducer = (posts=[],action) =>{
             post: posts.post.map((pos) => pos._id === action.payload.post._id ? action.payload.post : pos)
 
         }
-         //   return posts.post.filter((post)=> post._id != action.payload);
 
            
         default:

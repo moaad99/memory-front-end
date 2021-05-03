@@ -137,11 +137,12 @@ height: 490px;
 
   }
   .header{
-    width: 90%;
+    width: 80%;
+    height: 60px;
+    margin-top:20px;
   }
   .header h1 {
-    margin-inline:160px ;
-    margin-top: 8px;
+    margin-inline:120px ;
   }
   .hj{
     margin-inline: 70px;

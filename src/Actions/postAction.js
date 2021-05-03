@@ -1,7 +1,8 @@
 
 import {createPost, updatepost} from '../api'
 import {fetchpost,deletepost} from '../api'
-
+import toastr from 'toastr';
+import "toastr/build/toastr.css";
 
 export const getPost=() => async(dispatch) =>{
 
@@ -24,10 +25,12 @@ export const createpost=(post) => async(dispatch) =>{
         const {data} = await createPost(post);
 
         dispatch({type : 'CREATE',payload:data})
+        toastr.success('Post Created succecfully', 'Congratulation')
 
 
     } catch (error) {
         console.log(error)
+        toastr.warning('Post not Created ', 'Erreur')
         
     }
 

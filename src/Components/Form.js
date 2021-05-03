@@ -1,6 +1,8 @@
 import React , {useState} from 'react'
 
 import {useDispatch} from 'react-redux'
+import toastr from 'toastr';
+import "toastr/build/toastr.css";
 
 import {createpost} from '../Actions/postAction'
 
@@ -68,7 +70,7 @@ export default function Form() {
         />
 <br/><br/>
         <button type="submit" className="btn btn-block btn-black">Create Post</button>
-
+        <br/>
       </form>
         </div>
     )

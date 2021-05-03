@@ -18,8 +18,9 @@ export default function Card({post}) {
              <img className="r" style={{height:'220px',width:"330px"}} src={`http://localhost:8000/${post.article}`} alt=""/>
 
       <div className="card-body">
-          {post.creator}
-        <h5 className="card-title"> {post.title} </h5>
+      <strng style={{fontSize:"20px"}} > Creator :   </strng>   <string style={{fontSize:"20px"}} > {post.creator}</string>
+          <br/> 
+        <h5 style={{marginTop:"12px"}} className="card-title"> <strong> Ville :   </strong> {post.title} </h5>
         <hr/>
         <p className="card-text">
           {post.message}
